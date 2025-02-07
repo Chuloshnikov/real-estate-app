@@ -1,4 +1,5 @@
 import { Account, Avatars, Client } from 'react-native-appwrite';
+import * as Linking from 'expo-linking';
 
 export const config = {
     platform: 'com.mch.restate',
@@ -15,3 +16,13 @@ client
 
 export const avatar = new Avatars(client);
 export const account = new Account(client);
+
+
+export async function login() {
+    try {
+        const redirectUri = Linking.createURL('/');
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
