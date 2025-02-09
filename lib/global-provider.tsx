@@ -35,13 +35,15 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
 
   const isLogged = !!user;
 
+  const refetchWithoutParams = () => refetch({}); // Вызываем `refetch` без аргументов для устранения ошибки типов
+
   return (
     <GlobalContext.Provider
       value={{
         isLogged,
         user,
         loading,
-        refetch,
+        refetch: refetchWithoutParams,
       }}
     >
       {children}
