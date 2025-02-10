@@ -1,7 +1,7 @@
+import { Card, FeaturedCard } from "@/components/Cards";
 import Search from "@/components/Search";
 import icons from "@/constants/icons";
 import images from "@/constants/images";
-import { Link } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -31,7 +31,13 @@ export default function Index() {
                     <Text className="text-base font-rubik-bold text-primary-300">See All</Text>
                 </TouchableOpacity>
             </View>
+            <View className="flex flex-row gap-5 mt-5">
+              <FeaturedCard/> 
+              <FeaturedCard/>
+            </View>
         </View>
+        <FeaturedCard/>
+        <Card/>
       </View>
     </SafeAreaView>
   );
